@@ -101,9 +101,6 @@ address {
     color: var(--main-white-color);
 }
 /* Списки, ссылки*/
-.page-nav .link {
-    color: var(--main-title-color);
-}
 .head-contacts  { 
     display: flex;
     align-items: center;
@@ -127,36 +124,33 @@ address {
 .head-contacts-item:focus {
     fill: currentColor;
 }
-
 .link:hover,
 .link:focus {
     color: var(--accent-color);
 }
-.underline {
-    transition: color var(--transition-dur-and-func);
+.page-nav-link{
+    color: var(--main-title-color);
     position: relative;
-    padding-bottom: 28px;
+    transition: color var(--transition-dur-and-func);
 }
-.underline::after
+.current::after
   { position: absolute;
     display: block;
+    content: "";
+    left: 0;
+    bottom: 0;
     width: 100%;
     height: 4px;
     border-radius: 2px;
-    content: "";
-    left: 0;
-    bottom: -1px;
     background-color: var(--accent-color);
-    opacity: 0;
-    transition: opacity var(--transition-dur-and-func);
+    transition: background-color var(--transition-dur-and-func);
+    bottom: -29px;
 }
-.underline:hover,
-.underline:focus {
+.current {
     color: var(--accent-color);
 }
-.underline:hover::after,
-.underline:focus::after {
-    opacity: 1;
+.page-nav-link.current:hover::after{
+    background-color: var(--accent-color);
 }
 
 .navigation .list {
